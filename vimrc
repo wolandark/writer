@@ -28,6 +28,7 @@ Plug 'godlygeek/tabular'
 Plug '907th/vim-auto-save'
 Plug 'fcpg/vim-farout'
 Plug 'junegunn/vim-after-object'
+Plug 'wolandark/vimdict'
 call plug#end()
 
 "===[ Options ]==="
