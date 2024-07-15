@@ -1,14 +1,19 @@
 #!/bin/sh 
 
+# Vars
 _THESAURUS_PATH="$HOME/.vim/thesaurus/"
 _THESAURUS_URL="https://www.gutenberg.org/files/3202/files/mthesaur.txt"
 _THESAURUS_FILE="mthesaur.txt"
 
-_LANGUAGE_TOOL_PATH="$HOME/.vim/language_tool/"
+_LANGUAGE_TOOL_PATH="$HOME/.vim/languagetool/"
 _LANGUAGE_TOOL_URL="https://languagetool.org/download/LanguageTool-5.2.zip"
 _LANGUAGE_TOOL_ZIP="LanguageTool-5.2.zip"
 _LANGUAGE_TOOL_DIR="LanguageTool-5.2"
 
+_VIMRC="vimrc"
+_VIMRC_PATH="$HOME/.vim/"
+
+# Funcs
 SetUpPaths()
 {
 	mkdir -p "$_THESAURUS_PATH"
@@ -32,6 +37,7 @@ ToDestination()
 {
 	mv "$_LANGUAGE_TOOL_DIR" "$_LANGUAGE_TOOL_PATH"
 	mv "$_THESAURUS_FILE" "$_THESAURUS_PATH"
+	cp "$_VIMRC" "$_VIMRC_PATH"
 }
 
 main()
@@ -42,3 +48,8 @@ main()
 	ToDestination
 }
 main
+
+# Run Vim for plugin installation
+vim
+
+exit 0

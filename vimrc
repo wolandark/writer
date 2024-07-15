@@ -215,7 +215,7 @@ let g:stargate_name = 'Master of The Arcane Art of Vim, I Beg Thee'
 " and it is easier to use `/` or `?` for that
 
 "===[ languagetool ]==="
-let g:languagetool_jar='$HOME/Downloads/LanguageTool-5.2/languagetool-commandline.jar'
+let g:languagetool_jar='$HOME/.vim/languagetool/LanguageTool-5.2/languagetool-commandline.jar'
 
 "===[ thesaurus ]==="
 let g:tq_enabled_backends=["mthesaur_txt"]
