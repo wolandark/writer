@@ -12,6 +12,9 @@ function! SetupWim()
 endfunction
 call SetupWim()
 
+"===[ Encoding ]==="
+set encoding=utf-8
+
 "===[ Plugins ]==="
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -28,6 +31,10 @@ Plug 'godlygeek/tabular'
 Plug '907th/vim-auto-save'
 Plug 'fcpg/vim-farout'
 Plug 'wolandark/vimdict'
+Plug 'ron89/thesaurus_query.vim', {'for':'text'}
+Plug 'dpelle/vim-LanguageTool', {'for':['text', 'markdown']}
+Plug 'https://github.com/sedm0784/vim-you-autocorrect.git', {'for':'text'}
+Plug 'mbbill/undotree'
 call plug#end()
 
 "===[ Options ]==="
@@ -43,7 +50,6 @@ set concealcursor=n
 set scrolloff=50
 set autoread
 set cmdheight=1
-set foldmethod=manual
 set foldlevel=0
 set foldclose=all
 set path+=**
@@ -63,15 +69,16 @@ set colorcolumn=80
 set shiftwidth=4
 set tabstop=4
 set backspace=indent,eol,start
+set nowrap
+set textwidth=80
+set relativenumber!
+set foldmethod=marker
+set list
+set listchars=tab:▸\ ,trail:·
 filetype plugin indent on
 "set showtabline=2
 "set notimeout
 "set foldenable
-
-"===[ packadd ]==="
-packadd comment
-packadd justify
-packadd matchit
 
 "===[ Theme ]==="
 set background=dark
@@ -82,10 +89,10 @@ let g:seoul256_background = 233
 
 "=== Setting the theme with good colors
 if &term =~ '256color'
-" 	" Enable true (24-bit) colors instead of (8-bit) 256 colors.
+	" Enable true (24-bit) colors instead of (8-bit) 256 colors.
 	if has('termguicolors')
 		let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	 	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+		let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 		let &t_TI = ""
 		let &t_TE = ""
 		set termguicolors
@@ -125,6 +132,21 @@ function! WordCount()
     return "Words:" . word_count . ' '
 endfunction
 
+"===[ UndoTree ]==="
+if has("persistent_undo")
+   let target_path = expand('~/.vim/undodir')
+
+    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+
+    let &undodir=target_path
+    set undofile
+endif
+nnoremap <F5> :UndotreeToggle<CR>
+
 "===[ Mappings ]==="
 let mapleader = " "
 
@@ -150,7 +172,7 @@ nmap <leader>j :m .+1<CR>
 vnoremap K :m .-2<CR>gv=gv
 vnoremap J :m .+1<CR>gv=gv
 
-inoremap <nowait> jk <ESC>
+inoremap <nowait> jj <ESC>
 
 "=== Split Navigation
 set splitbelow splitright
@@ -178,7 +200,8 @@ if has("autocmd")
 endif
 
 "===[ Minimal StatusLine ]==="
-set statusline=%F\ %r%=%{WordCount()}
+" set statusline=%F\ %r%=%{WordCount()}
+set statusline=%F\ %r%=%{WordCount()}\ %l/%L
 
 "===[ Stargate ]==="
 "=== For 1 character to search before showing hints
@@ -190,3 +213,15 @@ noremap \F <Cmd>call stargate#OKvim(2)<CR>
 let g:stargate_name = 'Master of The Arcane Art of Vim, I Beg Thee'
 " Instead of 1 or 2 you can use any higher number, but it isn't much practical
 " and it is easier to use `/` or `?` for that
+
+"===[ languagetool ]==="
+let g:languagetool_jar='$HOME/Downloads/LanguageTool-5.2/languagetool-commandline.jar'
+
+"===[ thesaurus ]==="
+let g:tq_enabled_backends=["mthesaur_txt"]
+
+"===[ packadd ]==="
+packadd comment
+packadd justify
+packadd matchit
+
