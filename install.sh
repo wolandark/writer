@@ -10,10 +10,8 @@ _LANGUAGE_TOOL_URL="https://languagetool.org/download/LanguageTool-5.2.zip"
 _LANGUAGE_TOOL_ZIP="LanguageTool-5.2.zip"
 _LANGUAGE_TOOL_DIR="LanguageTool-5.2"
 
-_VIMRC="$parent_dir/vimrc"
+_VIMRC="vimrc"
 _VIMRC_PATH="$HOME/.vim/"
-
-parent_dir=$(basename "$(pwd)")
 
 # Funcs
 SetUpPaths()
