@@ -1,5 +1,5 @@
 # Writer
-Writer is a minimal vim9 configuration for writers in less than 200 lines!
+Writer is a minimal vim9 configuration for writers in less than 300 lines!
 
 # Installation
 
