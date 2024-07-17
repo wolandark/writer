@@ -199,6 +199,24 @@ nnoremap <s-DOWN> :resize -5 <CR>
 
 nnoremap <silent><ESC> <ESC>:noh<CR><ESC>
 
+"=== FZF
+nnoremap \co :Colors<CR>
+" nnoremap <nowait><leader>b :Buffers<CR>
+" nnoremap <nowait><leader>ff :Files<CR>
+" nnoremap <nowait><leader>W :Windows<CR>
+" nnoremap <nowait><leader>h :History<CR>
+" nnoremap <nowait><leader>hc :History:<CR>
+" nnoremap <nowait><leader>rg :Rg <CR>
+" nnoremap <nowait><leader>li :Lines <CR>
+" nnoremap <nowait><leader>bli :BLines <CR>
+" nnoremap <nowait><leader>ju :Jumps <CR>
+" nnoremap <nowait><leader>ma :Marks <CR>
+" nnoremap <nowait><leader>M :Maps <CR>
+" nnoremap <nowait><leader>sn :Snippets <CR>
+" nnoremap <nowait><leader>com :Commands <CR>
+" nnoremap <nowait><leader>ag :Ag <CR>
+" nnoremap <nowait><leader>tag :Tags <CR>
+
 "===[ Remember Cursor Position ]==="
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
