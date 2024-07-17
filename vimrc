@@ -31,6 +31,7 @@ Plug 'godlygeek/tabular'
 Plug '907th/vim-auto-save'
 Plug 'fcpg/vim-farout'
 Plug 'wolandark/vimdict'
+Plug 'wolandark/vim-ddgbg'
 Plug 'ron89/thesaurus_query.vim', {'for':'text'}
 Plug 'dpelle/vim-LanguageTool', {'for':['text', 'markdown']}
 Plug 'https://github.com/sedm0784/vim-you-autocorrect.git', {'for':'text'}
@@ -69,6 +70,7 @@ set colorcolumn=80
 set shiftwidth=4
 set tabstop=4
 set backspace=indent,eol,start
+set wildmode=longest,list,full
 set nowrap
 set textwidth=80
 set relativenumber!
@@ -151,7 +153,7 @@ nnoremap <F5> :UndotreeToggle<CR>
 let mapleader = " "
 
 "=== Justify
-map Q gq
+map Q mmgqG`m
 
 inoremap <C-U> <C-G>u<C-U>
 
@@ -219,6 +221,16 @@ let g:languagetool_jar='$HOME/.vim/languagetool/LanguageTool-5.2/languagetool-co
 
 "===[ thesaurus ]==="
 let g:tq_enabled_backends=["mthesaur_txt"]
+
+"===[ Spell ]==="
+function FixSpell()
+	normal! 1z=
+endfunction
+
+command! FixSpell call FixSpell()
+nnoremap gs :FixSpell<CR>
+
+nnoremap <F6> :setlocal spell! spelllang=en_us<CR>
 
 "===[ packadd ]==="
 packadd comment
