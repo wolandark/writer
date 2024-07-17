@@ -148,6 +148,8 @@ augroup END
 
 "===[ Minimal StatusLine ]==="
 " set statusline=%F\ %r%=%{WordCount()}
+highlight StatusLine guifg=#3f3f3f guibg=#ffffff
+highlight StatusLineNC guifg=#3f3f3f guibg=#ffffff
 set statusline=%F\ %r%=%{g:word_count}w\ %l/%L
 
 "===[ UndoTree ]==="
