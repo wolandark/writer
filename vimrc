@@ -162,6 +162,12 @@ nnoremap Y y$
 " yank whole file
 nnoremap YA :%y
 
+" Tab to complete
+inoremap <Tab> <C-n>
+"Shift Tab to complete in reverse
+inoremap <S-Tab> <C-p>
+
+"Undo
 inoremap <C-U> <C-G>u<C-U>
 
 "=== Border Around
@@ -202,6 +208,11 @@ nnoremap <s-UP> :resize +5 <CR>
 nnoremap <s-DOWN> :resize -5 <CR>
 
 nnoremap <silent><ESC> <ESC>:noh<CR><ESC>
+
+" Dictionary needs dictd 
+nnoremap <F2> :Dict <CR>
+" Search visuall selection in ddg
+nnoremap <F3> :DDGV <CR>
 
 "=== FZF
 nnoremap \co :Colors<CR>
@@ -257,10 +268,16 @@ nnoremap gs :FixSpell<CR>
 
 nnoremap <F6> :setlocal spell! spelllang=en_us<CR>
 
+"Spell bad next
+nnoremap ]g ]s
+"Spell bad prev
+nnoremap [g [s
+
 "===[ packadd ]==="
 packadd comment
 packadd justify
 packadd matchit
+
 iabbrev hr ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
 iabbrev hrd ══════════════════════════════════════════════════════════════════════════════
 
