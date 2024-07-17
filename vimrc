@@ -31,7 +31,7 @@ Plug 'godlygeek/tabular'
 Plug '907th/vim-auto-save'
 Plug 'fcpg/vim-farout'
 Plug 'wolandark/vimdict'
-Plug 'wolandark/vim-ddgbg'
+Plug 'wolandark/vim-ddgpb'
 Plug 'ron89/thesaurus_query.vim', {'for':'text'}
 Plug 'dpelle/vim-LanguageTool', {'for':['text', 'markdown']}
 Plug 'https://github.com/sedm0784/vim-you-autocorrect.git', {'for':'text'}
@@ -66,21 +66,21 @@ set hlsearch
 set termbidi
 set autowriteall
 set laststatus=2
+set showtabline=2
 set colorcolumn=80
+set textwidth=80
 set shiftwidth=4
 set tabstop=4
 set backspace=indent,eol,start
-set wildmode=longest,list,full
 set nowrap
-set textwidth=80
 set relativenumber!
+set foldenable
 set foldmethod=marker
 set list
 set listchars=tab:▸\ ,trail:·
+set wildmode=longest,list,full
 filetype plugin indent on
-"set showtabline=2
 "set notimeout
-"set foldenable
 
 "===[ Theme ]==="
 set background=dark
