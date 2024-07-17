@@ -132,14 +132,23 @@ let g:netrw_banner = 0
 let g:netrw_keepdir=0
 
 "===[ Word Count ]==="
-function! WordCount()
+let g:word_count = 0
+
+function! UpdateWordCount()
     let lines = getline(1, '$')
     let full_text = join(lines, " ")
     let words = split(full_text, '\W\+')
-    let word_count = len(words)
-    "echom word_count
-    return "Words:" . word_count . ' '
+    let g:word_count = len(words)
 endfunction
+
+augroup WordCount
+    autocmd!
+    autocmd BufReadPost,BufWritePost,TextChanged,TextChangedI * call UpdateWordCount()
+augroup END
+
+"===[ Minimal StatusLine ]==="
+" set statusline=%F\ %r%=%{WordCount()}
+set statusline=%F\ %r%=%{g:word_count}w\ %l/%L
 
 "===[ UndoTree ]==="
 if has("persistent_undo")
@@ -244,10 +253,6 @@ nnoremap \co :Colors<CR>
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-"===[ Minimal StatusLine ]==="
-" set statusline=%F\ %r%=%{WordCount()}
-set statusline=%F\ %r%=%{WordCount()}\ %l/%L
 
 "===[ Stargate ]==="
 "=== For 1 character to search before showing hints
