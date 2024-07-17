@@ -40,7 +40,8 @@ call plug#end()
 
 "===[ Options ]==="
 set nocompatible
-set timeoutlen=150
+set notimeout
+" set timeoutlen=150
 set updatetime=50
 set emoji
 set autochdir
@@ -51,6 +52,8 @@ set concealcursor=n
 set scrolloff=50
 set autoread
 set cmdheight=1
+set foldenable
+set foldmethod=marker
 set foldlevel=0
 set foldclose=all
 set path+=**
@@ -73,14 +76,10 @@ set shiftwidth=4
 set tabstop=4
 set backspace=indent,eol,start
 set nowrap
-set relativenumber!
-set foldenable
-set foldmethod=marker
 set list
 set listchars=tab:▸\ ,trail:·
 set wildmode=longest,list,full
 filetype plugin indent on
-"set notimeout
 
 "===[ Theme ]==="
 set background=dark
@@ -156,7 +155,12 @@ let mapleader = " "
 nnoremap <nowait>\a :call AutoSaveToggle()<CR>
 
 "=== Justify
-map Q mmgqG`m
+" format text
+nnoremap Q mmgqG`m 
+" yank to end of line
+nnoremap Y y$
+" yank whole file
+nnoremap YA :%y
 
 inoremap <C-U> <C-G>u<C-U>
 
@@ -258,4 +262,5 @@ packadd comment
 packadd justify
 packadd matchit
 iabbrev hr ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+iabbrev hrd ══════════════════════════════════════════════════════════════════════════════
 
