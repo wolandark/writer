@@ -19,15 +19,15 @@ set encoding=utf-8
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim', {'for':'text'}
+Plug 'junegunn/limelight.vim', {'for':'text'}
 Plug 'junegunn/seoul256.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'monkoose/vim9-stargate'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular', {'for':['text', 'markdown']}
 Plug '907th/vim-auto-save'
 Plug 'fcpg/vim-farout'
 Plug 'wolandark/vimdict'
@@ -151,6 +151,9 @@ nnoremap <F5> :UndotreeToggle<CR>
 
 "===[ Mappings ]==="
 let mapleader = " "
+
+"=== Auto Save
+nnoremap <nowait>\a :call AutoSaveToggle()<CR>
 
 "=== Justify
 map Q mmgqG`m
