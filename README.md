@@ -13,17 +13,19 @@ Everything will be setup for you automatically.
 
 
 <!-- ### With Goyo
-
 ![image](https://github.com/wolandark/writer/assets/107309764/8c54baf3-0a77-421d-8830-1107783672bd)
 ![image](https://github.com/wolandark/writer/assets/107309764/011e651a-50ee-4839-a429-b7ca7ff55842)
 ### With Limelight
 
 ### Minimal statusline with word count
 ![image](https://github.com/wolandark/writer/assets/107309764/3dcfe195-3b57-493a-ba40-a3f6246c738c)
-
 -->
 
-# Minimal statusline with word count
+### Screenshots
+
+<details><summary>Expand Screenshots</summary>
+
+  # Minimal statusline with word count
 ![image](https://github.com/user-attachments/assets/321b2fa6-ae5d-46b6-9a6d-b30de6f75fbe)
 # Distraction free writing/reading
 ![image](https://github.com/user-attachments/assets/a8ef2089-2f8d-47b1-9fa3-ede88f9f4513)
@@ -37,6 +39,7 @@ Everything will be setup for you automatically.
 # Unicode lines, boxes, spell checking and correction, formatting and justification
 ![image](https://github.com/user-attachments/assets/f15a40bf-b753-43b6-a615-3e3152d9293e)
 
+</details>
 <!--
   <table border="1">
         <tr>
