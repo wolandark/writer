@@ -60,6 +60,57 @@ Everything will be setup for you automatically.
     </table>
 -->
 
+<details>
+<summary>Expand Keybindings</summary>
+
+# Keybindings
+| Mode      | Mapping            | Command                                 |
+|-----------|--------------------|-----------------------------------------|
+| Normal    | \<nowait\>\a         | :call AutoSaveToggle()\<CR\>              |
+| Normal    | Q                  | mmgqG`m                                 |
+| Normal    | Y                  | y$                                      |
+| Normal    | YA                 | :%y                                     |
+| Insert    | \<Tab\>              | \<C-n\>                                   |
+| Insert    | \<S-Tab\>            | \<C-p\>                                   |
+| Insert    | \<C-U\>              | \<C-G\>u\<C-U\>                             |
+| Normal    | \<leader\>\          | :.!toilet -w 200 -f term -F border\<CR\>  |
+| Normal    | \<leader\>S          | :normal! O\<ESC\>jo\<ESC\>kzzk\<CR\>          |
+| Normal    | \<leader\>[          | :normal! O\<ESC\>j                        |
+| Normal    | \<leader\>]          | :normal! o\<ESC\>k                        |
+| Normal    | \<nowait\>\<leader\>w  | :w!\<CR\>                                 |
+| Normal    | \<leader\>so         | :w\<CR\>:source %\<CR\>                     |
+| Normal    | \<leader\>k          | :m .-2\<CR\>                              |
+| Normal    | \<leader\>j          | :m .+1\<CR\>                              |
+| Visual    | K                  | :m .-2\<CR\>gv=gv                         |
+| Visual    | J                  | :m .+1\<CR\>gv=gv                         |
+| Insert    | \<nowait\> jj        | \<ESC\>                                   |
+| Normal    | \<C-h\>              | \<C-w\>h                                  |
+| Normal    | \<C-j\>              | \<C-w\>j                                  |
+| Normal    | \<C-k\>              | \<C-w\>k                                  |
+| Normal    | \<C-l\>              | \<C-w\>l                                  |
+| Normal    | \<C-LEFT\>           | \<C-w\>h                                  |
+| Normal    | \<C-DOWN\>           | \<C-w\>j                                  |
+| Normal    | \<C-UP\>             | \<C-w\>k                                  |
+| Normal    | \<C-RIGHT\>          | \<C-w\>l                                  |
+| Normal    | \<s-Right\>          | :vertical resize +5 \<CR\>                |
+| Normal    | \<s-LEFT\>           | :vertical resize -5 \<CR\>                |
+| Normal    | \<s-UP\>             | :resize +5 \<CR\>                         |
+| Normal    | \<s-DOWN\>           | :resize -5 \<CR\>                         |
+| Normal    | \<silent\>\<ESC\>      | \<ESC\>:noh\<CR\>\<ESC\>                      |
+| Normal    | \<F2\>                 | :Dict \<CR\>                                  |
+| Visual    | \<F3\>                 | :DDGV \<CR\>                                  |
+| Normal    | \co                | :Colors\<CR\>                             |
+| Normal    | \f                 | \<Cmd\>call stargate#OKvim(1)\<CR\>         |
+| Normal    | \F                 | \<Cmd\>call stargate#OKvim(2)\<CR\>         |
+| Normal    | gs                 | :FixSpell\<CR\>                           |
+| Normal    | \<F6\>               | :setlocal spell! spelllang=en_us\<CR\>    |
+| Normal    | ]g                 | ]s                                      |
+| Normal    | [g                 | [s                                      |
+| Normal    | \<F5\>               | :UndotreeToggle\<CR\>                     |
+
+</details>
+
+
 # License 
 Same as Vim. 
 See `:help license`
