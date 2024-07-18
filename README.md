@@ -1,6 +1,14 @@
 # Writer
 Writer is a minimal vim9 configuration for writers in less than 300 lines!
 
+# Prerequisites 
+- Vim >= 9.0 (Preferably compiled with huge features)
+- Unzip (To extract the languagetool archive)
+- Java >= 8 (To run languagetool)
+- Dictd (For the vimdict plugin)
+- Bourne SHELL (For running the installation script)
+- Termgui capable terminal emulator (XTerm, Konsole, Alacrity etc ...)
+
 # Installation
 
 ```
